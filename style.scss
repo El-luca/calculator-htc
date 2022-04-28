@@ -1,0 +1,97 @@
+@import "./css/_reset";
+@import "./css/_variables";
+
+.background{
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+    height: 100vh;
+}
+
+
+.calculator{
+    width: calculator-rem(352);
+    background: $black;
+    border-radius: calculator-rem(30);        
+    padding: calculator-rem(8);
+
+
+    
+    &__display{
+        width: 100%;
+        width: calculator-rem(322);
+        height: calculator-rem(322);
+        text-align: end;
+        
+    }
+
+    &__display-input{
+        background: transparent;
+        outline: transparent;
+        border: 0;
+        color: $white;
+        text-align: right;
+        margin-top: calculator-rem(110);
+        font-size: calculator-rem(25);
+
+        
+    }
+
+    &__display-result{
+        color: $light-grey;
+        margin-top: calculator-rem(110);
+        font-size: calculator-rem(25);
+    }
+
+    &__buttons{
+        &--button{
+            background: $grey;
+            color: $white;
+            width: 73px;
+            height: 75px;
+            border-radius: 9px;
+            font-size: calculator-rem(36);
+            border: 0;
+
+            &:hover{
+                background: lighten($grey, 30%);
+            }
+        }
+
+       &--button-backgroud-red{
+            background: $red;
+
+            &:hover{
+                    background: darken($red, 12%);
+            }
+        }
+
+        &--button-color-green{
+            color: $green;
+
+            &:hover{
+                background: $green;
+                color: $grey;
+            }
+        }
+
+        &--button-background-green{
+            background: $green;
+
+            &:hover{
+                background: $grey;
+                color: $green;
+            }
+        }
+    }
+
+    &__wrapper-buttons{
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}
+
+
+
