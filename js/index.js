@@ -1,7 +1,7 @@
 const $buttonsNumbers = document.querySelectorAll('.calculator__buttons-nunber')
 const $inputCalculate = document.querySelector('.calculate')
 const $buttonsOperator = document.querySelectorAll('.calculator__buttons-operators')
-const $divison = document.querySelector('.calculator__buttons-operator-divison')
+const $divison = document.querySelector('.calculator__buttons-operator-division')
 const $result = document.querySelector('.calculator__display-result')
 const $equal =  document.querySelector('.calculator__buttons-equal')
 const $clean = document.querySelector('.clean')
@@ -23,13 +23,15 @@ $buttonsOperator.forEach(function($button){
         $inputCalculate.value = calculate.replaceAll(' ', '')
     })
 })
-
-// $divison.addEventListener('click' ,function(){
-//     calculate.innerHtml += '/'
-// })
+console.log($divison)
+$divison.addEventListener('click', function(){
+    calculate = calculate + '/'
+    $inputCalculate.value = calculate
+})
 
 $equal.addEventListener('click', function(){
-    if(calculate.textContent !== ''){
+    console.log(calculate)
+    if(calculate !== ''){
         $result.textContent = eval(calculate)
     }else{
         $result.textContent = 'NADA PARA CALCULAR'
